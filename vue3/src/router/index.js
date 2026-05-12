@@ -1,22 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import AppLayout from '../layouts/AppLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // 子路由用法
   routes: [
     {
       path: '/',
-      component: AppLayout,
+      // redirect: '/lesson2',
       children: [
         {
-          path: '',
-          name: 'home',
-          component: () => import('../views/HomeView.vue'),
+          path: 'lesson1',
+          name: 'lesson1',
+          component: () => import('../views/lesson1/TestView.vue'),
+          meta: {
+            headerTitle: '第4集：vue3模板语法讲解',
+          },
         },
         {
-          path: 'about',
-          name: 'about',
-          component: () => import('../views/AboutView.vue'),
+          path: 'lesson2',
+          name: 'lesson2',
+          component: () => import('../views/lesson2/TestView.vue'),
+          meta: {
+            headerTitle: '第5集：ref, isRef, shallowRef, triggerRef, customRef用法',
+          },
         },
       ],
     },
