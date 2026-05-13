@@ -32,6 +32,14 @@ const router = createRouter({
             headerTitle: '第6集：reactive创建对象类型响应式数据'
           },
         },
+        {
+          path: 'lesson4',
+          name: 'lesson4',
+          component: () => import('../views/lesson4/TestView.vue'),
+          meta: {
+            headerTitle: '第7集：toRefs和toRef的用法'
+          },
+        },
       ],
     },
   ],
